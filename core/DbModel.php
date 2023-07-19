@@ -4,9 +4,11 @@ namespace app\core;
 
 abstract class DbModel extends Model
 {
-    abstract public function tableName(): string;
+    abstract public static function tableName(): string;
 
     abstract public function attributes(): array;
+
+    abstract public static function primaryKey(): string;
 
     public function save()
     {
@@ -20,7 +22,7 @@ abstract class DbModel extends Model
             VALUES (" . implode(",", $params) . ")");
         } else {
             // Update existing model
-            $primaryKey = $this->primaryKey();
+            $primaryKey = $this->getPrimaryKey();
             $updateFields = array_map(fn($attr) => "$attr=:$attr", $attributes);
             $statement = self::prepare("UPDATE $tableName SET " . implode(",", $updateFields) . " WHERE $primaryKey = :$primaryKey");
             $statement->bindValue(":$primaryKey", $this->{$primaryKey});
@@ -32,6 +34,20 @@ abstract class DbModel extends Model
 
         $statement->execute();
         return true;
+    }
+
+    public static function findOne($where) // [ email => test@example.com, first_name => hossein ]
+    {
+        $tableName = static::tableName();
+        $attributes = array_keys($where);
+        $sql = implode(" AND ", array_map(fn($attr) => "$attr = :$attr", $attributes));
+        $statement = self::prepare(" SELECT * FROM $tableName WHERE $sql");
+        foreach ($where as $key => $item){
+            $statement->bindValue(":$key", $item);
+        }
+
+        $statement->execute();
+        return $statement->fetchObject(static::class);
     }
 
     public static function prepare($sql)

@@ -30,12 +30,20 @@ use app\core\Application;
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <?php if(Application::isGuest()): ?>
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="/login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/register">Register</a>
                 </li>
+                <?php else: ?>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/logout">Welcome <?= Application::$app->user->getDisplayName() ?>
+                    (logout)
+                    </a>
+                </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
@@ -48,6 +56,7 @@ use app\core\Application;
         </div>
     <?php endif; ?>
     {{content}}
+
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
