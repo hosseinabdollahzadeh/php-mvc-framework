@@ -27,5 +27,6 @@ $app->router->post('/login', [AuthController::class, 'login']);
 $app->router->get('/register', [AuthController::class, 'register']);
 $app->router->post('/register', [AuthController::class, 'register']);
 $app->router->get('/logout', [AuthController::class, 'logout']); // Todo: in real project change the method to post
+$app->router->get('/profile', [AuthController::class, 'profile']);
 
 $app->run();
