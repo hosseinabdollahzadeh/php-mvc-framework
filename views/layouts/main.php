@@ -1,4 +1,5 @@
 <?php
+/** @var $this \app\core\View */
 
 use app\core\Application;
 
@@ -8,7 +9,7 @@ use app\core\Application;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello world</title>
+    <title><?= $this->title ?></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
@@ -30,22 +31,23 @@ use app\core\Application;
                 </li>
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <?php if(Application::isGuest()): ?>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
-                </li>
+                <?php if (Application::isGuest()): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
                 <?php else: ?>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/profile">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="/logout">Welcome <?= Application::$app->user->getDisplayName() ?>
-                    (logout)
-                    </a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/profile">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page"
+                           href="/logout">Welcome <?= Application::$app->user->getDisplayName() ?>
+                            (logout)
+                        </a>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div>

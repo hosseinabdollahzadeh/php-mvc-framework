@@ -1,17 +1,19 @@
-<h1>Contact us</h1>
+<?php
+/** @var $this \app\core\View */
 
-<form action="" method="post">
-    <div class="form-group">
-        <label>Subject</label>
-        <input name="subject" type="text" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Email</label>
-        <input name="email" type="email" class="form-control">
-    </div>
-    <div class="form-group">
-        <label>Body</label>
-        <textarea name="body" class="form-control"></textarea>
-    </div>
+/** @var $model \app\models\ContactForm */
+
+use app\core\form\TextareaField;
+
+$this->title = 'Contact';
+?>
+
+    <h1>Contact us</h1>
+
+<?php $form = \app\core\form\Form::begin('', 'post') ?>
+<?= $form->field($model, 'subject') ?>
+<?= $form->field($model, 'email') ?>
+<?= new TextareaField($model, 'body') ?>
+    <br>
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?php \app\core\form\Form::end(); ?>

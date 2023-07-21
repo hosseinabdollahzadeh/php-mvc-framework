@@ -1,8 +1,11 @@
 <?php
 /** @var $model User */
 
+/** @var $this \app\core\View */
+
 use app\models\User;
 
+$this->title = 'Login';
 ?>
     <h1>Login</h1>
 <?php $form = \app\core\form\Form::begin('', "post") ?>
