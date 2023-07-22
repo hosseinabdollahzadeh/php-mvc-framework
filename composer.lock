@@ -4,8 +4,41 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2faae2f062005f8647db85c2db02ed37",
+    "content-hash": "12d93f6f237534c2d77ae0d3e28c7927",
     "packages": [
+        {
+            "name": "abiz/abd-php-mvc-core",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hosseinabdollahzadeh/abd-php-mvc-core.git",
+                "reference": "eb3793f127e88af760b8f15dbd030ecf5337b786"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hosseinabdollahzadeh/abd-php-mvc-core/zipball/eb3793f127e88af760b8f15dbd030ecf5337b786",
+                "reference": "eb3793f127e88af760b8f15dbd030ecf5337b786",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "abiz\\phpmvc\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Hossein Abdollahzadeh",
+                    "email": "abdollahzadeh.hossein@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/hosseinabdollahzadeh/abd-php-mvc-core/issues",
+                "source": "https://github.com/hosseinabdollahzadeh/abd-php-mvc-core/tree/v1.0.4"
+            },
+            "time": "2023-07-22T02:00:57+00:00"
+        },
         {
             "name": "graham-campbell/result-type",
             "version": "v1.1.1",

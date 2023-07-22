@@ -1,7 +1,7 @@
 <?php
-/** @var $this \app\core\View */
+/** @var $this \abiz\phpmvc\View */
 
-use app\core\Application;
+use abiz\phpmvc\Application;
 
 ?>
 <!doctype html>

@@ -1,6 +1,6 @@
 <?php
 
-use app\core\Application;
+use abiz\phpmvc\Application;
 
 class m0001_create_users_table
 {

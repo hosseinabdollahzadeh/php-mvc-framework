@@ -1,5 +1,5 @@
 <?php
-/** @var \app\core\View $this */
+/** @var \abiz\phpmvc\View $this */
 $this->title = 'Profile';
 ?>
 
