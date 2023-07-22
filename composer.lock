@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d603773152ddfb08fdf2cdedc558cb1",
+    "content-hash": "aa1e8197e205d698df991877e2240f45",
     "packages": [
         {
             "name": "abiz/abd-php-mvc-core",

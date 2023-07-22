@@ -18,6 +18,10 @@ $config = [
 
 $app = new Application(dirname(__DIR__), $config);
 
+//$app->on(Application::EVENT_BEFORE_REQUEST, function (){
+//    echo "Before request";
+//});
+
 $app->router->get('/', [SiteController::class, 'home']);
 $app->router->get('/contact', [SiteController::class, 'contact']);
 $app->router->post('/contact', [SiteController::class, 'contact']);

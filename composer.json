@@ -13,6 +13,6 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.5",
-        "abiz/abd-php-mvc-core": "*"
+        "abiz/abd-php-mvc-core": "^1.0"
     }
 }
